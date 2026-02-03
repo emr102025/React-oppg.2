@@ -1,19 +1,26 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import styles from "../styles/CookieClicker.module.css";
 import cookie from "/cookie.png";
 
 export default function CookieClicker() {
+  const [count, setCount] = useState(0);
+
+  //handles increase when pressing the cookie image
+  const handleIncrease = () => {
+    setCount((prev) => prev + 1);
+  };
+
   return (
     <>
       <h1>CookieClicker</h1>
-      <button>
+      <button onClick={handleIncrease}>
         <img
           src={cookie}
           alt="An animated happy cookie with arms and legs"
           className={styles.cookie_img}
         />
       </button>
+      <h2 onClick={handleIncrease}>Points: {count}</h2>
     </>
   );
 }
