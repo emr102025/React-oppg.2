@@ -5,8 +5,15 @@ export default function CatFacts() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [catFacts, setCatFacts] = useState([]);
+  const [delayFacts, setDelayFacts] = useState(0);
 
   useEffect(() => {
+    if (delayFacts < catFacts.length) {
+      const timout = setTimeout(() => {
+        setDelayFacts((prev) => prev + 1);
+      }, 1000);
+      return () => clearTimeout(timout);
+    }
     const fetchCatFacts = async () => {
       try {
         const response = await fetch("https://catfact.ninja/facts?limit=5");
@@ -23,7 +30,7 @@ export default function CatFacts() {
       }
     };
     fetchCatFacts();
-  }, []);
+  }, [delayFacts, catFacts]);
 
   return (
     <>
@@ -32,7 +39,7 @@ export default function CatFacts() {
         {loading && <p>Loading cat facts...</p>}
         {error && <p>Error occurred {error}</p>}
         <ul>
-          {catFacts.map((facts) => (
+          {catFacts.slice(0, delayFacts).map((facts) => (
             <li>{facts.fact}</li>
           ))}
         </ul>
