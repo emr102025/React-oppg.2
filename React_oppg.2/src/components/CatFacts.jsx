@@ -1,11 +1,10 @@
-/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import styles from "../styles/CatFacts.module.css";
 
 export default function CatFacts() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [catFacts, setcatFacts] = [];
+  const [catFacts, setCatFacts] = useState([]);
 
   useEffect(() => {
     const fetchCatFacts = async () => {
@@ -15,7 +14,7 @@ export default function CatFacts() {
           throw new Error("Failed to fetch data");
         }
         const data = await response.json();
-        setcatFacts(data.data);
+        setCatFacts(data.data);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -23,12 +22,19 @@ export default function CatFacts() {
       }
     };
     fetchCatFacts();
-  });
+  }, []);
 
   return (
     <>
       <section className={styles.CatFacts}>
         <h1 className={styles.h1}>CatFacts</h1>
+        {loading && <p>Loading cat facts...</p>}
+        {error && <p>Error occurred {error}</p>}
+        <ul>
+          {catFacts.map((facts) => (
+            <li>{facts.fact}</li>
+          ))}
+        </ul>
       </section>
     </>
   );
