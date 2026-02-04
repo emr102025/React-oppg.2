@@ -14,6 +14,7 @@ export default function CatFacts() {
           throw new Error("Failed to fetch data");
         }
         const data = await response.json();
+        await new Promise((resolve) => setTimeout(resolve, 2000));
         setCatFacts(data.data);
       } catch (error) {
         setError(error.message);
