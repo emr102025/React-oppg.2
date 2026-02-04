@@ -13,7 +13,7 @@ export default function CookieClicker() {
   return (
     <>
       <h1>CookieClicker</h1>
-      <button onClick={handleIncrease}>
+      <button onClick={handleIncrease} className={styles.cookie_btn}>
         <img
           src={cookie}
           alt="An animated happy cookie with arms and legs"
