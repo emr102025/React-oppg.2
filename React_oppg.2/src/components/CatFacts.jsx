@@ -27,7 +27,9 @@ export default function CatFacts() {
 
   return (
     <>
-      <h1 className={styles.h1}>CatFacts</h1>
+      <section className={styles.CatFacts}>
+        <h1 className={styles.h1}>CatFacts</h1>
+      </section>
     </>
   );
 }

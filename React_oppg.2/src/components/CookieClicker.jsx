@@ -12,15 +12,17 @@ export default function CookieClicker() {
 
   return (
     <>
-      <h1 className={styles.cursor}>CookieClicker</h1>
-      <button onClick={handleIncrease} className={styles.cookie_btn}>
-        <img
-          src={cookie}
-          alt="An animated happy cookie with arms and legs"
-          className={styles.cookie_img}
-        />
-      </button>
-      <h2 className={styles.cursor}>Points: {count}</h2>
+      <section className={styles.CookieClicker}>
+        <h1 className={styles.cursor}>CookieClicker</h1>
+        <button onClick={handleIncrease} className={styles.cookie_btn}>
+          <img
+            src={cookie}
+            alt="An animated happy cookie with arms and legs"
+            className={styles.cookie_img}
+          />
+        </button>
+        <h2 className={styles.cursor}>Points: {count}</h2>
+      </section>
     </>
   );
 }
