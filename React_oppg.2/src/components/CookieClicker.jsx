@@ -12,7 +12,7 @@ export default function CookieClicker() {
 
   return (
     <>
-      <h1>CookieClicker</h1>
+      <h1 className={styles.cursor}>CookieClicker</h1>
       <button onClick={handleIncrease} className={styles.cookie_btn}>
         <img
           src={cookie}
@@ -20,7 +20,7 @@ export default function CookieClicker() {
           className={styles.cookie_img}
         />
       </button>
-      <h2 onClick={handleIncrease}>Points: {count}</h2>
+      <h2 className={styles.cursor}>Points: {count}</h2>
     </>
   );
 }

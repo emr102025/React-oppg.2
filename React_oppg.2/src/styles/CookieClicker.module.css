@@ -23,3 +23,6 @@ body {
 .cookie_btn:active {
   transform: scale(0.9);
 }
+.cursor {
+  cursor: default;
+}
