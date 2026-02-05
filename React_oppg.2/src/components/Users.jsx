@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { mockData } from "../data/mockdata";
+import styles from "../styles/Users.module.css";
 
 export default function Users() {
   const Users = () => {
@@ -11,16 +12,18 @@ export default function Users() {
 
   return (
     <>
-      <h1>Users</h1>
-      <ul>
-        {mockData.map((user) => (
-          <li>
-            Username: {user.username}
-            <br />
-            Email: {user.email}
-          </li>
-        ))}
-      </ul>
+      <section className={styles.mockData}>
+        <h1>Our users.</h1>
+        <ul>
+          {mockData.map((user) => (
+            <li className={styles.Users}>
+              Username: {user.username}
+              <br />
+              Email: {user.email}
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   );
 }

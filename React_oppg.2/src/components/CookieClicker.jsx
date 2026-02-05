@@ -13,7 +13,7 @@ export default function CookieClicker() {
   return (
     <>
       <section className={styles.CookieClicker}>
-        <h1 className={styles.cursor}>CookieClicker</h1>
+        <h1 className={styles.cursor}>CookieClicker!</h1>
         <button onClick={handleIncrease} className={styles.cookie_btn}>
           <img
             src={cookie}
