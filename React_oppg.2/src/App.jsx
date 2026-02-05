@@ -5,8 +5,10 @@ import CookieClicker from "./components/CookieClicker";
 function App() {
   return (
     <>
-      <CookieClicker />
-      <CatFacts />
+      <div className="flexbox">
+        <CookieClicker />
+        <CatFacts />
+      </div>
     </>
   );
 }

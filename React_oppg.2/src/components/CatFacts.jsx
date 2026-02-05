@@ -11,7 +11,7 @@ export default function CatFacts() {
     if (delayFacts < catFacts.length) {
       const timout = setTimeout(() => {
         setDelayFacts((prev) => prev + 1);
-      }, 1000);
+      }, 800);
       return () => clearTimeout(timout);
     }
     const fetchCatFacts = async () => {
@@ -40,7 +40,7 @@ export default function CatFacts() {
         {error && <p>Error occurred {error}</p>}
         <ul>
           {catFacts.slice(0, delayFacts).map((facts) => (
-            <li>{facts.fact}</li>
+            <li className={styles.facts}>{facts.fact}</li>
           ))}
         </ul>
       </section>

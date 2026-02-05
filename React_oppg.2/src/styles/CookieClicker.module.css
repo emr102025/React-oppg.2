@@ -6,14 +6,24 @@
   font-display: swap;
 }
 
-.cookie_img {
-  max-width: 100px;
-}
 body {
   font-family: "delius";
   color: rgb(43, 29, 22);
   background-color: #e6aba0;
   background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+}
+
+.CookieClicker {
+  display: grid;
+  grid-column: 1/2;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cookie_img {
+  max-width: 200px;
 }
 
 .cookie_btn {

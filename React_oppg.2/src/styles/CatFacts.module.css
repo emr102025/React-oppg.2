@@ -1,0 +1,18 @@
+.CatFacts {
+  display: grid;
+  grid-template-rows: 30% 70%;
+  grid-column: 2/3;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: start;
+  max-width: 70%;
+  text-align: center;
+  margin: auto;
+  height: 100%;
+}
+
+.facts {
+  margin-bottom: 10px;
+  text-align: left;
+}
