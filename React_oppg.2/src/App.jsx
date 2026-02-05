@@ -2,6 +2,7 @@ import "./App.css";
 import CatFacts from "./components/CatFacts";
 import CookieClicker from "./components/CookieClicker";
 import Users from "./components/Users";
+import { mockData } from "./data/mockData";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <div className="flexbox">
         <CookieClicker />
         <CatFacts />
-        <Users />
+        <Users mockData={mockData} />
       </div>
     </>
   );
