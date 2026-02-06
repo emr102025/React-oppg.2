@@ -40,7 +40,9 @@ export default function CatFacts() {
         {error && <p>Error occurred {error}</p>}
         <ul>
           {catFacts.slice(0, delayFacts).map((facts) => (
-            <li className={styles.facts}>{facts.fact}</li>
+            <li className={styles.facts} key={crypto.randomUUID()}>
+              {facts.fact}
+            </li>
           ))}
         </ul>
       </section>
