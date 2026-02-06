@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { mockData } from "../data/mockdata";
+import { mockData } from "../data/mockData";
 import styles from "../styles/Users.module.css";
 
 export default function Users() {
@@ -10,9 +10,10 @@ export default function Users() {
   const handleAdd = (e) => {
     e.preventDefault();
     if (username && email) {
+      console.log("den kjører");
       setUser([...user, { username, email }]);
-      setUsername("");
-      setEmail("");
+      setUsername(username);
+      setEmail(email);
     }
   };
 
@@ -21,7 +22,7 @@ export default function Users() {
       <section className={styles.mockData}>
         <h1>Our users.</h1>
         <ul>
-          {mockData.map((user) => (
+          {user.map((user) => (
             <li className={styles.Users} key={crypto.randomUUID()}>
               Username: {user.username}
               <br />
@@ -31,29 +32,24 @@ export default function Users() {
         </ul>
       </section>
       <section>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              handleAdd();
-            }
-          }}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              handleAdd();
-            }
-          }}
-        />
-        <button onClick={handleAdd}>Add</button>
+        <form onSubmit={handleAdd}>
+          <h2>New User?</h2>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <button type="submit" onClick={handleAdd}>
+            Add User
+          </button>
+        </form>
       </section>
     </>
   );
