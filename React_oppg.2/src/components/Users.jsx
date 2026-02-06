@@ -12,8 +12,8 @@ export default function Users() {
     if (username && email) {
       console.log("den kjører");
       setUser([...user, { username, email }]);
-      setUsername(username);
-      setEmail(email);
+      setUsername("");
+      setEmail("");
     }
   };
 
