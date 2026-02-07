@@ -2,3 +2,26 @@
   list-style: none;
   margin-bottom: 15px;
 }
+.mockData {
+  grid-column: 2/1;
+}
+.addUser {
+  display: grid;
+  grid-column: 2/2;
+}
+input {
+  margin-bottom: 15px;
+  padding: 5px 15px;
+}
+input:focus {
+  outline: none;
+}
+.addBtn {
+  border: rgb(43, 29, 22) 1px solid;
+}
+.addBtn:active {
+  transform: scale(0.9);
+}
+.cursor {
+  cursor: default;
+}

@@ -20,7 +20,7 @@ export default function Users() {
   return (
     <>
       <section className={styles.mockData}>
-        <h1>Our users.</h1>
+        <h1 className={styles.cursor}>Our users.</h1>
         <ul>
           {user.map((user) => (
             <li className={styles.Users} key={crypto.randomUUID()}>
@@ -31,22 +31,24 @@ export default function Users() {
           ))}
         </ul>
       </section>
-      <section>
+      <section className={styles.addUser}>
         <form onSubmit={handleAdd}>
-          <h2>New User?</h2>
+          <h1 className={styles.cursor}>New User?</h1>
           <input
             type="text"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
+          <br />
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button type="submit" onClick={handleAdd}>
+          <br />
+          <button type="submit" onClick={handleAdd} className={styles.addBtn}>
             Add User
           </button>
         </form>

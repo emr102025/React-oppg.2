@@ -35,7 +35,7 @@ export default function CatFacts() {
   return (
     <>
       <section className={styles.CatFacts}>
-        <h1 className={styles.h1}>Cat Facts?</h1>
+        <h1 className={styles.cursor}>Cat Facts?</h1>
         {loading && <p>Loading cat facts...</p>}
         {error && <p>Error occurred {error}</p>}
         <ul>
